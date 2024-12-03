@@ -1,4 +1,4 @@
-# Connected Data London 2024 - masterclass
+# Connected Data London 2024 - ERKG masterclass
 
 How to create knowledge graphs from structured and unstructured data
 based on entity resolution, to enhance downstream AI applications.
