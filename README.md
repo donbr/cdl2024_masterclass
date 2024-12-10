@@ -1,5 +1,7 @@
 # Connected Data London 2024 - ERKG masterclass
 
+<https://2024.connected-data.london/talks/how-to-create-knowledge-graphs-from-structured-and-unstructured-data-based-on-entity-resolution-to-enhance-downstream-ai-applications/>
+
 In this masterclass, we will step through how to generate knowledge
 graphs from structured and unstructured data based on _entity
 resolution_ (ER) to enhance data quality for the downstream AI applications.
@@ -76,22 +78,20 @@ Key Topics:
   - distinguish among the key terminology: entity resolution, named entity recognition, relation extraction, entity linking
   - leverage entity resolution to provide a semantic overlay on records from structured data, i.e., generating graph elements while preserving evidence
   - using a _textgraph_ algorithm to construct a lexical graph alongside the text chunking and embedding needed for _retrieval augmented generation_ (RAG)
-  - graph construction practices which are consistent with the needs of trustworthy AI applications, audits, evidence-based decision making, and so on
+  - graph construction practices which are consistent with the needs of trustworthy AI applications, audits, evidence-based decision making, etc.
   - case studies for production use cases which leverage these practices
   - why not simply use an LLM to do all of the work?
 
 Format:
 
 The class will start with a lecture describing important terms and
-practices, then move to hands-on coding examples in Python.  We'll
-work with a collection of Jupyter notebooks which are available in
-this GitHub repository.
-Each notebook illustrates an important section of code, along with
-information for debugging, illustrating intermediate results, and
-performance monitoring.
+practices:
+<https://derwen.ai/s/khj9#0>
 
-Then we'll work with a Python program which assembles these pieces
-into one application, which you can repurpose for your own use cases.
+Then we'll move to hands-on coding examples in Python, working with
+a collection of Jupyter notebooks which are available in the linked
+GitHub code repositories.
+
 To make the most of the time available (2 hours) we will link to some
 other online tutorials for deep-dives into specific areas which are
 beyond the scope of this class.
@@ -110,8 +110,10 @@ beyond the scope of this class.
   6. Build a context-specific _entity linker_ based on entity resolution results above, blending unstructured elements into the "backbone" graph
   7. Show how to use the resulting knowledge graph and vector database together in a _GraphRAG_ application
 
-This is the logical order for how the components would fit together in a production workflow.
-We will consider each step, not exactly in this order, to highlight how the parts are integrated.
+This would the logical order for how the components fit together in a
+production workflow.
+Working not exactly in this order, we will consider each step and
+highlight how the parts get integrated together.
 
 
 ### Senzing ER Playground, with open data
@@ -196,11 +198,11 @@ Following the instructions in the `README.md` we'll run these notebooks:
 
 ### Entity Linking: connecting elements into a comprehensive graph
 
-In this last section, we'll show how to use ER results to train an
+In this final section, we'll show how to reuse ER results to train an
 _entity linker_ to blend structured and unstructured graph elements.
 This part ties the other sections together into a whole picture.
 
-The process was developed by Louis Guitton, and described in the article
+The process was developed by Louis Guitton, which he described in the article
 ["Panama Papers Investigation using Entity Resolution and Entity Linking"](https://guitton.co/posts/entity-resolution-entity-linking).
 
 Louis employs a `spaCy` pipeline component [`spacy-lancedb-linker`](https://github.com/louisguitton/spacy-lancedb-linker)
@@ -217,7 +219,8 @@ and instead we'll review the results in:
 
 ## Kudos:
 
+  * Paco Nathan <https://senzing.com/consult-entity-resolution-paco/>
   * Clair Sullivan <https://clairsullivan.com/>
   * Louis Guitton <https://guitton.co/>
-  * Michael Dockter <https://github.com/docktermj>
   * Jeff Butcher <https://github.com/jbutcher21>
+  * Michael Dockter <https://github.com/docktermj>
