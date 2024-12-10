@@ -6,16 +6,18 @@ resolution_ (ER) to enhance data quality for the downstream AI applications.
 We'll reuse components from six open source tutorials.
 Overall, these illustrate a process for using ER as a basis for
 blending elements from structured and unstructure data into
-knowledge graphs used for GraphRAG and other AI apps downstream.
+knowledge graphs used for GraphRAG and other kinds of AI apps.
 
 These tutorials each have related articles, code repositories,
 slide decks, and videos.
-In general, the main concepts are described in in the article
+
+The main concepts connecting the components of these tutorials were
+described in in the article
 ["Unbundling the Graph in GraphRAG"](https://www.oreilly.com/radar/unbundling-the-graph-in-graphrag/).
 
 Keep in mind:
 
-> Defenders think in terms of lists, while attackers think in graphs; the latter prevail – paraphrasing from [John Lambert](https://github.com/JohnLaTwC/Shared/blob/master/Defenders%20think%20in%20lists.%20Attackers%20think%20in%20graphs.%20As%20long%20as%20this%20is%20true%2C%20attackers%20win.md)
+> "Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win." – [John Lambert](https://github.com/JohnLaTwC/Shared/blob/master/Defenders%20think%20in%20lists.%20Attackers%20think%20in%20graphs.%20As%20long%20as%20this%20is%20true%2C%20attackers%20win.md)
 
 
 ## Abstract
@@ -42,8 +44,10 @@ environments.
 Overall, we will discuss a generalized architecture for how to
 construct and update knowledge graphs using a blend of structured and
 unstructured data sources, and consider the impact of entity
-resolution on downstream AI apps.
+resolution on downstream usage.
 
+
+## Syllabus
 
 Target Audience:
 
@@ -59,40 +63,35 @@ Prerequisites:
   - some experience coding in Python
   - familiarity with popular packages such as Pandas, Jupyter, Docker
 
+Goals:
 
-## Goals
+  - gain hands-on experience creating knowledge graphs from both structured sources and unstructured sources, for use in a Graph RAG application
+  - follow practices which emphasize data quality plus affordances for audits, evidence handling, and trustworthy AI applications
+  - use entity resolution to create the "backbone" of a knowledge graph from structured data sources
+  - compare use of contemporary state-of-the-art open models and open source libraries in Python for extracting graph elements from unstructured data sources
+  - use entity resolution results to build a context-sensitive entity linker, blending graph elements from structured and unstructured sources
 
-  * Gain hands-on experience creating knowledge graphs from both structured sources and unstructured sources, for use in a Graph RAG application.
-  * Follow practices which emphasize data quality plus affordances for audits, evidence handling, and trustworthy AI applications downstream.
-  * Use entity resolution to create the "backbone" of a knowledge graph from structured data sources.
-  * Compare use of contemporary state-of-the-art open models and open source libraries in Python for extracting graph elements from unstructured data sources.
-  * Use entity resolution results to build a context-sensitive entity linker, blending graph elements from structured and unstructured sources.
+Key Topics:
 
+  - distinguish among the key terminology: entity resolution, named entity recognition, relation extraction, entity linking
+  - leverage entity resolution to provide a semantic overlay on records from structured data, i.e., generating graph elements while preserving evidence
+  - using a _textgraph_ algorithm to construct a lexical graph alongside the text chunking and embedding needed for _retrieval augmented generation_ (RAG)
+  - graph construction practices which are consistent with the needs of trustworthy AI applications, audits, evidence-based decision making, and so on
+  - case studies for production use cases which leverage these practices
+  - why not simply use an LLM to do all of the work?
 
-## Key Topics
+Format:
 
-  * Distinguish among the key terminology: entity resolution, named entity recognition, relation extraction, entity linking.
-  * Leverage entity resolution to provide a semantic overlay on records from structured data, i.e., generating graph elements while preserving evidence.
-  * Using a textgraph algorithm to construct a lexical graph alongside the text chunking and embedding needed for retrieval augmented generation (RAG).
-  * Graph construction practices which are consistent with the needs of trustworthy AI applications, audits, evidence-based decision making, and so on.
-  * Case studies for production use cases which leverage these practices.
-  * Why not simply use an LLM to do all of the work?
-
-
-## Format
-
-This class will start with a lecture describing important terms and
+The class will start with a lecture describing important terms and
 practices, then move to hands-on coding examples in Python.  We'll
 work with a collection of Jupyter notebooks which are available in
 this GitHub repository.
-
 Each notebook illustrates an important section of code, along with
 information for debugging, illustrating intermediate results, and
 performance monitoring.
 
 Then we'll work with a Python program which assembles these pieces
 into one application, which you can repurpose for your own use cases.
-
 To make the most of the time available (2 hours) we will link to some
 other online tutorials for deep-dives into specific areas which are
 beyond the scope of this class.
