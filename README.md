@@ -5,7 +5,7 @@ graphs from structured and unstructured data based on _entity
 resolution_ (ER) to enhance data quality for the downstream AI applications.
 We'll reuse components from six open source tutorials.
 Overall, these illustrate a process for using ER as a basis for
-blending elements from structured and unstructure data into
+blending elements from structured and unstructured data into
 knowledge graphs used for GraphRAG and other kinds of AI apps.
 
 These tutorials each have related articles, code repositories,
@@ -110,7 +110,7 @@ beyond the scope of this class.
   6. Build a context-specific _entity linker_ based on entity resolution results above, blending unstructured elements into the "backbone" graph
   7. Show how to use the resulting knowledge graph and vector database together in a _GraphRAG_ application
 
-This is the logical order for how the componets would fit together in a production workflow.
+This is the logical order for how the components would fit together in a production workflow.
 We will consider each step, not exactly in this order, to highlight how the parts are integrated.
 
 
@@ -152,7 +152,7 @@ Instead we will explore some Jupyter notebooks which show the execution step-by-
 <https://github.com/DerwenAI/ERKG/tree/main/examples>
 
 The second part (by Clair Sullivan) is described in the article ["When GraphRAG Goes Bad: A Study in Why you Cannot Afford to Ignore Entity Resolution"](https://www.linkedin.com/pulse/when-graphrag-goesbad-study-why-you-cannot-afford-ignore-sullivan-7ymnc/).
-Clair adds _GraphRAG_ to the Las Vegas PPP tutorial using [LangChaing](https://www.langchain.com/) to produce a chatbot for exploring potential fraud.
+Clair adds _GraphRAG_ to the Las Vegas PPP tutorial using [LangChain](https://www.langchain.com/) to produce a chatbot for exploring potential fraud.
 The execution time would be longer than our class, so we'll review results here:
 
   - code: <https://github.com/cj2001/erkg_demo>
@@ -181,7 +181,8 @@ In this last section, we'll show how to use ER results to train an _entity linke
 This part ties the other sections together into a whole picture.
 
 The process was developed by Louis Guitton, and described in the article ["Panama Papers Investigation using Entity Resolution and Entity Linking"](https://guitton.co/posts/entity-resolution-entity-linking).
-This employes a `spaCy` pipeline component [`spacy-lancedb-linker`](https://github.com/louisguitton/spacy-lancedb-linker] which is available for [download from PyPi](https://pypi.org/project/spacy-lancedb-linker/).
+
+Louis employs a `spaCy` pipeline component [`spacy-lancedb-linker`](https://github.com/louisguitton/spacy-lancedb-linker] which is available for [download from PyPi](https://pypi.org/project/spacy-lancedb-linker/).
 The tutorial is available in:
 <https://github.com/louisguitton/erkg-tutorials>
 
