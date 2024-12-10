@@ -1,7 +1,21 @@
 # Connected Data London 2024 - ERKG masterclass
 
-How to create knowledge graphs from structured and unstructured data
-based on entity resolution, to enhance downstream AI applications.
+In this masterclass, we will step through how to generate knowledge
+graphs from structured and unstructured data based on _entity
+resolution_ (ER) to enhance data quality for the downstream AI applications.
+We'll reuse components from six open source tutorials.
+Overall, these illustrate a process for using ER as a basis for
+blending elements from structured and unstructure data into
+knowledge graphs used for GraphRAG and other AI apps downstream.
+
+These tutorials each have related articles, code repositories,
+slide decks, and videos.
+In general, the main concepts are described in in the article
+["Unbundling the Graph in GraphRAG"](https://www.oreilly.com/radar/unbundling-the-graph-in-graphrag/).
+
+Keep in mind:
+
+> Defenders think in terms of lists, while attackers think in graphs; the latter prevail – paraphrasing from [John Lambert](https://github.com/JohnLaTwC/Shared/blob/master/Defenders%20think%20in%20lists.%20Attackers%20think%20in%20graphs.%20As%20long%20as%20this%20is%20true%2C%20attackers%20win.md)
 
 
 ## Abstract
@@ -25,17 +39,34 @@ evidence-based decision making, and practices required for
 mission-critical enterprise applications in highly-regulated
 environments.
 
-Overall, we will discuss a generalized architecture for how to build
-and update knowledge graphs using a blend of structured and
+Overall, we will discuss a generalized architecture for how to
+construct and update knowledge graphs using a blend of structured and
 unstructured data sources, and consider the impact of entity
 resolution on downstream AI apps.
 
 
-Target audience: data science teams, people with general interest in AI -- especially in highly-regulated enterprise environments.
+Target Audience:
 
-Level: intermediate
+  - data science teams
+  - people with general interest in AI, especially in highly-regulated enterprise environments
 
-Prerequisite Knowledge: some experience coding in Python and familiarity with popular packages such as Pandas and Jupyter.
+Level:
+
+  - intermediate
+
+Prerequisites:
+
+  - some experience coding in Python
+  - familiarity with popular packages such as Pandas, Jupyter, Docker
+
+
+## Goals
+
+  * Gain hands-on experience creating knowledge graphs from both structured sources and unstructured sources, for use in a Graph RAG application.
+  * Follow practices which emphasize data quality plus affordances for audits, evidence handling, and trustworthy AI applications downstream.
+  * Use entity resolution to create the "backbone" of a knowledge graph from structured data sources.
+  * Compare use of contemporary state-of-the-art open models and open source libraries in Python for extracting graph elements from unstructured data sources.
+  * Use entity resolution results to build a context-sensitive entity linker, blending graph elements from structured and unstructured sources.
 
 
 ## Key Topics
@@ -46,26 +77,6 @@ Prerequisite Knowledge: some experience coding in Python and familiarity with po
   * Graph construction practices which are consistent with the needs of trustworthy AI applications, audits, evidence-based decision making, and so on.
   * Case studies for production use cases which leverage these practices.
   * Why not simply use an LLM to do all of the work?
-
-
-## Goals
-
-  1. Gain hands-on experience creating knowledge graphs from both structured sources and unstructured sources, for use in a Graph RAG application.
-  2. Follow practices which emphasize data quality plus affordances for audits, evidence handling, and trustworthy AI applications downstream.
-  3. Use entity resolution to create the "backbone" of a knowledge graph from structured data sources.
-  4. Compare use of contemporary state-of-the-art open models and open source libraries in Python for extracting graph elements from unstructured data sources.
-  5. Use entity resolution results to build a context-sensitive entity linker, blending graph elements from structured and unstructured sources.
-
-
-## Session outline:
-
-  * Start with multiple open datasets used in sanctions compliance (e.g., money laundering, ultimate beneficial ownership, and relate work) as structured data sources.
-  * Use entity resolution to identify entities and relations which have supporting evidence (e.g., for use in investigations).
-  * Build a "skeleton" graph from the structured data sources plus the "semantic overlay" of entities and relations.
-  * Load unstructured data (e.g., from relevant news articles) and split into text chunks organized in a vector database, based on an embedding model.
-  * Parse the text chunks to build a lexical graph, then use a textgraph algorithm to extract its most important elements.
-  * Build a context-specific entity linker based on the entity resolution results from above, to blend the unstructured elements into the "skeleton" graph.
-  * Show how to use the resulting knowledge graph and vector database together in a Graph RAG application.
 
 
 ## Format
@@ -90,13 +101,18 @@ beyond the scope of this class.
 ---
 
 
-## General Background
+## Outline
 
-> Defenders think in terms of lists, while attackers think in graphs; the latter prevail – paraphrasing from [John Lambert](https://github.com/JohnLaTwC/Shared/blob/master/Defenders%20think%20in%20lists.%20Attackers%20think%20in%20graphs.%20As%20long%20as%20this%20is%20true%2C%20attackers%20win.md)
+  1. Start with _open datasets_ for sanctions compliance (e.g., money laundering, ultimate beneficial ownership, and related work) as structured data sources
+  2. Use _entity resolution_ to identify entities and relations which have supporting evidence (e.g., for use in investigations)
+  3. Construct a "backbone" graph from structured data sources plus a _semantic overlay_ of entities and relations
+  4. Load unstructured data (e.g., from relevant news articles) and split into text chunks organized in a vector database, based on an _embedding model_
+  5. Parse the text chunks to generate a _lexical graph_, then use a textgraph algorithm to extract its most important elements
+  6. Build a context-specific _entity linker_ based on entity resolution results above, blending unstructured elements into the "backbone" graph
+  7. Show how to use the resulting knowledge graph and vector database together in a _GraphRAG_ application
 
-In this masterclass, we'll how portions from six open source tutorials. Overall, these illustrate a process for using _entity resolution_ as a basis for blending elements from structured and unstructure data into constructing knowledge graphs used for GraphRAG and other AI apps downstream.
-Each of these tutorials has associated articles, code repositories, slide decks, and videos. In general, the main concepts were described in
-["Unbundling the Graph in GraphRAG"](https://www.oreilly.com/radar/unbundling-the-graph-in-graphrag/).
+This is the logical order for how the componets would fit together in a production workflow.
+We will consider each step, not exactly in this order, to highlight how the parts are integrated.
 
 
 ### Senzing ER Playground, with open data
@@ -126,7 +142,7 @@ Next we'll work with open data for tracking sanctioned organizations and _ultima
   * compare with the related graph visualization: <https://derwen.ai/s/khj9#43>
 
 
-### ERKG tutorial
+### ERKG tutorial: from structured data sources to GraphRAG
 
 This next section explores how to create knowledge graphs based on entity resolution using structured data sources.
 Based on the article ["Entity Resolved Knowledge Graphs: A Tutorial"](https://neo4j.com/developer-blog/entity-resolved-knowledge-graphs/), the first part loads data from three sources about businesses in the Las Vegas metro area.
@@ -138,8 +154,10 @@ Instead we will explore some Jupyter notebooks which show the execution step-by-
 
 The second part (by Clair Sullivan) is described in the article ["When GraphRAG Goes Bad: A Study in Why you Cannot Afford to Ignore Entity Resolution"](https://www.linkedin.com/pulse/when-graphrag-goesbad-study-why-you-cannot-afford-ignore-sullivan-7ymnc/).
 Clair adds _GraphRAG_ to the Las Vegas PPP tutorial using [LangChaing](https://www.langchain.com/) to produce a chatbot for exploring potential fraud.
-The execution time would be much longer than our class, so instead we'll review results in:
-<https://github.com/cj2001/erkg_demo>
+The execution time would be longer than our class, so we'll review results here:
+
+  - code: <https://github.com/cj2001/erkg_demo>
+  - video: <https://senzing.com/gph-ep-2-graphrag-boost-llm-apps/>
 
 
 ### Constructing KGs from Unstructured Data
@@ -158,7 +176,7 @@ Following the instructions in the `README.md` we'll run these notebooks:
   * `embed.ipynb` -- query the entity embedding model (after having run `demo.py`)
 
 
-### Entity Linking
+### Entity Linking: connecting the elements into a comprehensive graph
 
 In this last section, we'll show how to use ER results to train an _entity linker_ to blend structured and unstructured graph elements.
 This part ties the other sections together into a whole picture.
@@ -170,4 +188,3 @@ The tutorial is available in:
 
 In the interest of time, we won't be able to run all of this code, so instead we'll review the results in:
 <https://github.com/louisguitton/erkg-tutorials/blob/main/tutorial.ipynb>
-
