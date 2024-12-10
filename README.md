@@ -21,6 +21,8 @@ Keep in mind:
 
 > "Defenders think in lists. Attackers think in graphs. As long as this is true, attackers win." – [John Lambert](https://github.com/JohnLaTwC/Shared/blob/master/Defenders%20think%20in%20lists.%20Attackers%20think%20in%20graphs.%20As%20long%20as%20this%20is%20true%2C%20attackers%20win.md)
 
+![generalized architecture: build](https://github.com/DerwenAI/cdl2024_masterclass/blob/main/arch.1.png)
+
 
 ## Abstract
 
@@ -213,6 +215,8 @@ The tutorial is available in:
 We won't be able to run all of this tutorial during our class,
 and instead we'll review the results in:
 <https://github.com/louisguitton/erkg-tutorials/blob/main/tutorial.ipynb>
+
+![generalized architecture: usage](https://github.com/DerwenAI/cdl2024_masterclass/blob/main/arch.2.png)
 
 
 ---
