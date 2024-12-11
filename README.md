@@ -12,10 +12,13 @@ knowledge graphs used for GraphRAG and other kinds of AI apps.
 
 These tutorials each have related articles, code repositories,
 slide decks, and videos.
-
 The main concepts connecting the components of these tutorials were
 described in in the article
 ["Unbundling the Graph in GraphRAG"](https://www.oreilly.com/radar/unbundling-the-graph-in-graphrag/).
+
+Given the time constraints of the course, please start early on the
+downloads for _Part 1_ and _Part 3_.
+
 
 Keep in mind:
 
@@ -104,13 +107,13 @@ beyond the scope of this class.
 
 ## Outline
 
-  1. Start with _open datasets_ for sanctions compliance (e.g., money laundering, ultimate beneficial ownership, and related work) as structured data sources
-  2. Use _entity resolution_ to identify entities and relations which have supporting evidence (e.g., for use in investigations)
-  3. Construct a "backbone" graph from structured data sources plus a _semantic overlay_ of entities and relations
-  4. Load unstructured data (e.g., from relevant news articles) and split into text chunks organized in a vector database, based on an _embedding model_
-  5. Parse the text chunks to generate a _lexical graph_, then use a textgraph algorithm to extract its most important elements
-  6. Build a context-specific _entity linker_ based on entity resolution results above, blending unstructured elements into the "backbone" graph
-  7. Show how to use the resulting knowledge graph and vector database together in a _GraphRAG_ application
+  * Start with _open datasets_ for sanctions compliance (e.g., money laundering, ultimate beneficial ownership, and related work) as structured data sources
+  * Use _entity resolution_ to identify entities and relations which have supporting evidence (e.g., for use in investigations)
+  * Construct a "backbone" graph from structured data sources plus a _semantic overlay_ of entities and relations
+  * Load unstructured data (e.g., from relevant news articles) and split into text chunks organized in a vector database, based on an _embedding model_
+  * Parse the text chunks to generate a _lexical graph_, then use a textgraph algorithm to extract its most important elements
+  * Build a context-specific _entity linker_ based on entity resolution results above, blending unstructured elements into the "backbone" graph
+  * Show how to use the resulting knowledge graph and vector database together in a _GraphRAG_ application
 
 This would the logical order for how the components fit together in a
 production workflow.
@@ -118,7 +121,7 @@ Working not exactly in this order, we will consider each step and
 highlight how the parts get integrated together.
 
 
-### Entity Resolution playground, with open data
+### Part 1: Entity Resolution playground, with open data
 
 This initial set of tutorials shows the basics for how to use _entity
 resolution_ (ER) to merge datasets, which generates graph elements:
@@ -149,7 +152,7 @@ and _ultimate beneficial ownership_ connections:
   * compare with the related graph visualization: <https://derwen.ai/s/khj9#43>
 
 
-### ERKG tutorial: from structured data sources to GraphRAG
+### Part 2: ERKG tutorial, from structured data sources to GraphRAG
 
 This next section explores how to create knowledge graphs based on
 entity resolution using structured data sources.
@@ -181,7 +184,7 @@ utility by Jeff Butcher, for exporting ER results from Senzing as a
 [NetworkX](https://networkx.org/) graph.
 
 
-### Unbundled KG Construction from Unstructured Data
+### Part 3: Unbundled KG construction from unstructured data
 
 Next, let's explore how to [unbundle KG construction](https://derwen.ai/s/khj9#19)
 based on unstructured data, instead of simply throwing all the data at an LLM!
@@ -198,7 +201,7 @@ Following the instructions in the `README.md` we'll run these notebooks:
   * `embed.ipynb` -- query the entity embedding model (after having run `demo.py`)
 
 
-### Entity Linking: connecting elements into a comprehensive graph
+### Part 4: Entity Linking, connecting elements into a comprehensive graph
 
 In this final section, we'll show how to reuse ER results to train an
 _entity linker_ to blend structured and unstructured graph elements.
