@@ -118,7 +118,7 @@ Working not exactly in this order, we will consider each step and
 highlight how the parts get integrated together.
 
 
-### Senzing ER Playground, with open data
+### Entity Resolution playground, with open data
 
 This initial set of tutorials shows the basics for how to use _entity
 resolution_ (ER) to merge datasets, which generates graph elements:
@@ -181,7 +181,7 @@ utility by Jeff Butcher, for exporting ER results from Senzing as a
 [NetworkX](https://networkx.org/) graph.
 
 
-### Constructing KGs from Unstructured Data
+### Unbundled KG Construction from Unstructured Data
 
 Next, let's explore how to [unbundle KG construction](https://derwen.ai/s/khj9#19)
 based on unstructured data, instead of simply throwing all the data at an LLM!
@@ -221,7 +221,7 @@ and instead we'll review the results in:
 
 ---
 
-## Kudos:
+## Tutorial Authors:
 
   * Paco Nathan <https://senzing.com/consult-entity-resolution-paco/>
   * Clair Sullivan <https://clairsullivan.com/>
