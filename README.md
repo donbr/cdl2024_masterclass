@@ -228,3 +228,5 @@ and instead we'll review the results in:
   * Louis Guitton <https://guitton.co/>
   * Jeff Butcher <https://github.com/jbutcher21>
   * Michael Dockter <https://github.com/docktermj>
+
+![](https://senzing.com/wp-content/uploads/senzing-Logo@1x.png)
