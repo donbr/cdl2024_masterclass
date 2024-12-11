@@ -152,6 +152,9 @@ and _ultimate beneficial ownership_ connections:
   * compare with the related graph visualization: <https://derwen.ai/s/khj9#43>
 
 
+NB: there's another set of ER intro tutorials at <https://senzing.com/docs/quickstart/>
+
+
 ### Part 2: ERKG tutorial, from structured data sources to GraphRAG
 
 This next section explores how to create knowledge graphs based on
