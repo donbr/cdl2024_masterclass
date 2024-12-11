@@ -1,4 +1,4 @@
-# Connected Data London 2024 - ERKG masterclass
+# Connected Data London 2024 masterclass: Entity Resolved Knowledge Graphs
 
 <https://2024.connected-data.london/talks/how-to-create-knowledge-graphs-from-structured-and-unstructured-data-based-on-entity-resolution-to-enhance-downstream-ai-applications/>
 
