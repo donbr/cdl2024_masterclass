@@ -1,10 +1,12 @@
-# Connected Data London 2024masterclass: Entity Resolved Knowledge Graphs
+# Connected Data London 2024 masterclass: Entity Resolved Knowledge Graphs
 
-> Refer [Claire's repository](https://github.com/donbr/erkg_demo) for a simpler continuation of Paco's original work that leverages Docker as opposed to a debian image for Senzing.  Also uses Langchain for some Q&A.
+> COMMENTS:  Refer to [Claire's repository](https://github.com/donbr/erkg_demo) for a simpler continuation of Paco's original work that leverages Docker as opposed to a debian image for Senzing.  Also uses Langchain for some Q&A.
 
 > I found Louis's work in Part 4 particularly interesting.  He ended up creating his own Python library after his attempts to fix a 5 year old Microsoft Approximate Nearest Neighbours library hit some road blocks.  You can see some of his notes here:  https://github.com/donbr/erkg-tutorials/blob/main/dev.ipynb
 
 > Also of note are Louis's use of Dagster:  https://github.com/search?q=repo%3Adonbr%2Ferkg-tutorials%20dagster&type=code
+
+> I started my journey on this content on a fork of the `strwythura` repo mentioned in **Part 3** below.  I was noodling over similar concepts when I found this great work - the TLDR version of my repo is to [just add Prefect](https://github.com/donbr/strwythura/blob/main/graphrag_readme.md)
 
 <https://2024.connected-data.london/talks/how-to-create-knowledge-graphs-from-structured-and-unstructured-data-based-on-entity-resolution-to-enhance-downstream-ai-applications/>
 
@@ -16,10 +18,8 @@ Overall, these illustrate a process for using ER as a basis for
 blending elements from structured and unstructured data into
 knowledge graphs used for GraphRAG and other kinds of AI apps.
 
-These tutorials each have related articles, code repositories,
-slide decks, and videos.
-The main concepts connecting the components of these tutorials were
-described in in the article
+These tutorials each have related articles, code repositories, slide decks, and videos.
+The main concepts connecting the components of these tutorials were described in in the article
 ["Unbundling the Graph in GraphRAG"](https://www.oreilly.com/radar/unbundling-the-graph-in-graphrag/).
 
 Given the time constraints of the course, please start early on the
