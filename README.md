@@ -1,5 +1,7 @@
 # Connected Data London 2024masterclass: Entity Resolved Knowledge Graphs
 
+> Refer [Claire's repository](https://github.com/donbr/erkg_demo) for a simpler continuation of Paco's original work that leverages Docker as opposed to a debian image for Senzing.  Also uses Langchain for some Q&A.
+
 > I found Louis's work in Part 4 particularly interesting.  He ended up creating his own Python library after his attempts to fix a 5 year old Microsoft Approximate Nearest Neighbours library hit some road blocks.  You can see some of his notes here:  https://github.com/donbr/erkg-tutorials/blob/main/dev.ipynb
 
 > Also of note are Louis's use of Dagster:  https://github.com/search?q=repo%3Adonbr%2Ferkg-tutorials%20dagster&type=code
